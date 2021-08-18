@@ -11,7 +11,7 @@ import People from '../../assets/people.svg'
 const Home = () => {
   return (
     <div
-      className="px-3 py-5"
+      className="px-3 py-4"
       style={{
         background: `url(${HomeBg})`,
         backgroundPosition: 'center',
