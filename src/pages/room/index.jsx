@@ -33,7 +33,7 @@ const Room = () => {
         style={{ margin: '90px 16px 0 16px', minHeight: '85vh', zIndex: 1 }}
       >
         {rooms.map((room) => (
-          <GuestRoom key={room} />
+          <GuestRoom key={room} roomNumber={room} />
         ))}
 
         <div className="d-grid gap-2" style={{ marginBottom: 100 }}>

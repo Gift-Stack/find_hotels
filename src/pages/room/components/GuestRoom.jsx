@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import RoomContext from '../../../context/roomContext'
 
-const GuestRoom = () => {
+const GuestRoom = ({ roomNumber }) => {
+  const { deleteRoom } = useContext(RoomContext)
   const [childrenCounter, setChildrenCounter] = useState(0)
   const [adultCounter, setAdultCounter] = useState(2)
+  const [toggleRoom, setToggleRoom] = useState(false)
 
   const handleIncrement = (toIncrement) => {
     if (toIncrement === 'child') {
@@ -22,9 +25,28 @@ const GuestRoom = () => {
     }
   }
 
+  const handleToggleRoom = () => setToggleRoom(!toggleRoom)
+  const handleDeleteRoom = () => {
+    deleteRoom(roomNumber)
+    console.log(roomNumber)
+  }
+
   return (
     <>
-      <h3 className="my-4">Room 1</h3>
+      <div
+        className="d-flex justify-content-between align-items-center my-4"
+        style={{ cursor: 'pointer' }}
+      >
+        <h3
+          className="d-flex justify-content-between"
+          onClick={handleToggleRoom}
+        >
+          <span>Room 1</span>
+        </h3>
+        <h5 className="text-danger" onClick={handleDeleteRoom}>
+          {toggleRoom && 'Delete room'}
+        </h5>
+      </div>
       <div className="d-flex justify-content-between my-4">
         <h3>Adults</h3>
         <div

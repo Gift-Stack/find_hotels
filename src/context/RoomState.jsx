@@ -1,7 +1,7 @@
 import { useReducer } from 'react'
 import RoomContext from './roomContext'
 import RoomReducer from './roomReducer'
-import { GET_ROOMS, ADD_ROOM } from './types'
+import { GET_ROOMS, ADD_ROOM, DELETE_ROOM } from './types'
 
 const RoomState = ({ children }) => {
   const initialState = {
@@ -14,8 +14,12 @@ const RoomState = ({ children }) => {
 
   const addRoom = () => dispatch({ type: ADD_ROOM })
 
+  const deleteRoom = (id) => dispatch({ type: DELETE_ROOM, payload: id })
+
   return (
-    <RoomContext.Provider value={{ rooms: state.rooms, addRoom, getRooms }}>
+    <RoomContext.Provider
+      value={{ rooms: state.rooms, addRoom, getRooms, deleteRoom }}
+    >
       {children}
     </RoomContext.Provider>
   )
