@@ -22,13 +22,13 @@ const Home = () => {
       <div>
         <img src={Logo} alt="Logo" />
       </div>
-      <h1 style={{ width: '65%', margin: '90px 0 95px 0' }}>
+      <h1 style={{ width: '65%', margin: '90px 0 100px 0' }}>
         Find the perfect deal, always.
       </h1>
       <div className="card rounded py-3 px-2">
-        <div class="input-group mb-3">
+        <div className="input-group mb-3">
           <span
-            class="input-group-text bg-white d-flex justify-content-center align-items-center"
+            className="input-group-text bg-white d-flex justify-content-center align-items-center"
             id="basic-addon1"
             style={{ borderRight: 0 }}
           >
@@ -36,14 +36,14 @@ const Home = () => {
           </span>
           <input
             type="text"
-            class="form-control form-control-lg"
+            className="form-control form-control-lg"
             placeholder="Type city, place, or hotel name"
             aria-label="Username"
             aria-describedby="basic-addon1"
             style={{ borderRight: 0, borderLeft: 0 }}
           />
           <span
-            class="input-group-text bg-white justify-content-center align-items-center"
+            className="input-group-text bg-white justify-content-center align-items-center"
             id="basic-addon1"
             style={{ borderLeft: 0 }}
           >
@@ -52,23 +52,23 @@ const Home = () => {
         </div>
         <div className="row">
           <div className="col-8">
-            <div class="input-group">
+            <div className="input-group">
               <input
                 type="text"
-                class="form-control form-control-lg"
+                className="form-control form-control-lg"
                 placeholder="Check-in"
               />
               <input
                 type="text"
-                class="form-control form-control-lg"
+                className="form-control form-control-lg"
                 placeholder="Check-out"
               />
             </div>
           </div>
           <div className="col-4">
-            <div class="input-group mb-3">
+            <div className="input-group mb-3">
               <span
-                class="input-group-text bg-white d-flex justify-content-center align-items-center"
+                className="input-group-text bg-white d-flex justify-content-center align-items-center"
                 id="basic-addon1"
                 style={{ borderRight: 0 }}
               >
@@ -76,7 +76,7 @@ const Home = () => {
               </span>
               <input
                 type="text"
-                class="form-control form-control-lg"
+                className="form-control form-control-lg"
                 placeholder="2"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
