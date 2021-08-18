@@ -5,9 +5,11 @@ const GuestRoom = () => {
   const [adultCounter, setAdultCounter] = useState(2)
 
   const handleIncrement = (toIncrement) => {
+    console.log('object')
     if (toIncrement === 'child') {
       setChildrenCounter(childrenCounter + 1)
-    } else if (toIncrement === 'adult') {
+    }
+    if (toIncrement === 'adult') {
       setAdultCounter(adultCounter + 1)
     }
   }
@@ -15,7 +17,8 @@ const GuestRoom = () => {
   const handleDecrement = (toDecrement) => {
     if (toDecrement === 'child') {
       setChildrenCounter(childrenCounter - 1)
-    } else if (toDecrement === 'adult') {
+    }
+    if (toDecrement === 'adult') {
       setAdultCounter(adultCounter - 1)
     }
   }

@@ -12,14 +12,13 @@ const Room = () => {
     getRooms()
     // eslint-disable-next-line
   }, [rooms])
+
   const AddRoom = () => {
     addRoom()
     getRooms()
-    console.log(rooms.length)
-    console.log('cick')
   }
   return (
-    <div style={{ minHeight: '100vh' }}>
+    <div>
       <div
         className="border p-3 d-flex justify-content-center position-fixed top-0 w-100"
         style={{ zIndex: 2 }}
@@ -31,11 +30,12 @@ const Room = () => {
       </div>
       <div
         className="position-relative"
-        style={{ margin: '90px 16px', minHeight: '85vh', zIndex: -1 }}
+        style={{ margin: '90px 16px', minHeight: '85vh', zIndex: 1 }}
       >
         {rooms.map((room) => (
           <GuestRoom key={room} />
         ))}
+
         <div className="d-grid gap-2">
           <button
             className="btn btn-lg text-primary"

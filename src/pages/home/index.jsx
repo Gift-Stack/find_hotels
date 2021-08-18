@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 import HomeBg from '../../assets/home.svg'
 import Logo from '../../assets/logo.svg'
 import Arrow from '../../assets/arrow.svg'
@@ -86,9 +88,9 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="d-grid gap-2">
+        <Link to="/room" className="d-grid gap-2">
           <button className="btn btn-lg text-white bg-primary">Search</button>
-        </div>
+        </Link>
       </div>
       <div
         className="d-flex align-items-center justify-content-between"

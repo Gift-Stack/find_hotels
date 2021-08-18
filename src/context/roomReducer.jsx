@@ -8,7 +8,7 @@ export default (state, action) => {
     case ADD_ROOM:
       return {
         ...state,
-        rooms: [...state.rooms, state.rooms.charAt(state.room.length - 1) + 1]
+        rooms: [...state.rooms, state.rooms[state.rooms.length - 1] + 1]
       }
     default:
       return state
