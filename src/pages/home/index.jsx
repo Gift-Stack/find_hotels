@@ -51,7 +51,7 @@ const Home = () => {
           </span>
         </div>
         <div className="row">
-          <div className="col-9">
+          <div className="col-8">
             <div class="input-group">
               <input
                 type="text"
@@ -65,7 +65,7 @@ const Home = () => {
               />
             </div>
           </div>
-          <div className="col-3">
+          <div className="col-4">
             <div class="input-group mb-3">
               <span
                 class="input-group-text bg-white d-flex justify-content-center align-items-center"
