@@ -48,7 +48,7 @@ const GuestRoom = ({ roomNumber }) => {
           <span>Room {roomNumber}</span>
         </h3>
         <h5 className="text-danger" onClick={handleDeleteRoom}>
-          Delete room
+          Remove room
         </h5>
       </div>
       <div className="d-flex justify-content-between my-4">
