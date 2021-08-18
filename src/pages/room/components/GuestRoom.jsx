@@ -5,14 +5,13 @@ const GuestRoom = ({ roomNumber }) => {
   const { deleteRoom } = useContext(RoomContext)
   const [childrenCounter, setChildrenCounter] = useState(0)
   const [adultCounter, setAdultCounter] = useState(2)
-  const [toggleRoom, setToggleRoom] = useState(false)
   const [toggleChildren, setToggleChildren] = useState(false)
-  // const childrenCounterArr = []
   const [childrenCounterArr, setChildrenCounterArr] = useState([])
 
   const handleIncrement = (toIncrement) => {
     if (toIncrement === 'child') {
       setChildrenCounter(childrenCounter + 1)
+      setChildrenCounterArr([...childrenCounterArr, childrenCounter + 1])
     }
     if (toIncrement === 'adult') {
       setAdultCounter(adultCounter + 1)
@@ -28,14 +27,15 @@ const GuestRoom = ({ roomNumber }) => {
     }
   }
 
-  const handleToggleRoom = () => setToggleRoom(!toggleRoom)
   const handleDeleteRoom = () => deleteRoom(roomNumber)
 
   const handleToggleChildren = () => {
-    for (let i = 0; i < childrenCounter; i++) {
-      setChildrenCounterArr([...childrenCounterArr, i + 1])
-    }
     setToggleChildren(!toggleChildren)
+  }
+
+  const handleFilter = (id) => {
+    handleDecrement('child')
+    setChildrenCounterArr(childrenCounterArr.filter((child) => child !== id))
   }
 
   return (
@@ -43,13 +43,12 @@ const GuestRoom = ({ roomNumber }) => {
       <div
         className="d-flex justify-content-between align-items-center my-4"
         style={{ cursor: 'pointer' }}
-        onClick={handleToggleRoom}
       >
         <h3 className="d-flex justify-content-between">
           <span>Room {roomNumber}</span>
         </h3>
         <h5 className="text-danger" onClick={handleDeleteRoom}>
-          {toggleRoom && 'Delete room'}
+          Delete room
         </h5>
       </div>
       <div className="d-flex justify-content-between my-4">
@@ -106,28 +105,34 @@ const GuestRoom = ({ roomNumber }) => {
             borderLeft: '1px solid #ddd'
           }}
         >
-          {childrenCounterArr.map((child) => (
+          {childrenCounterArr.map((child, index) => (
             <div
               key={child}
               className="mb-3 d-flex justify-content-between align-items-center"
             >
-              <span>Child {child} age</span>
-              <select
-                name={roomNumber}
-                id={roomNumber}
-                className="form-select form-select-lg"
-                style={{ width: 90 }}
-              >
-                <option value="age" defaultValue>
-                  age
-                </option>
-                <option value="10">10</option>
-                <option value="9">9</option>
-                <option value="8">8</option>
-                <option value="7">7</option>
-                <option value="6">6</option>
-                <option value="5">5</option>
-              </select>
+              <span>Child {index + 1} age</span>
+              <div className="d-flex align-items-center">
+                <select
+                  name={roomNumber}
+                  id={roomNumber}
+                  className="form-select form-select-lg"
+                  style={{ width: 85, marginRight: 15 }}
+                >
+                  <option value="age" defaultValue>
+                    age
+                  </option>
+                  <option value="10">10</option>
+                  <option value="9">9</option>
+                  <option value="8">8</option>
+                  <option value="7">7</option>
+                  <option value="6">6</option>
+                  <option value="5">5</option>
+                </select>
+                <i
+                  className="bi bi-x-lg text-danger"
+                  onClick={() => handleFilter(child)}
+                ></i>
+              </div>
             </div>
           ))}
         </div>

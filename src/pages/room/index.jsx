@@ -26,7 +26,7 @@ const Room = () => {
         <Link to="/">
           <i className="bi bi-x-lg position-absolute start-0 mx-3 text-primary"></i>
         </Link>
-        <p className="text-center text-bold">Who is staying?</p>
+        <p className="text-center">Who is staying?</p>
       </div>
       <div
         className="position-relative"
