@@ -5,7 +5,7 @@ import { GET_ROOMS, ADD_ROOM } from './types'
 
 const RoomState = ({ children }) => {
   const initialState = {
-    rooms: [1, 2]
+    rooms: [1]
   }
 
   const [state, dispatch] = useReducer(RoomReducer, initialState)
