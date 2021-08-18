@@ -26,10 +26,7 @@ const GuestRoom = ({ roomNumber }) => {
   }
 
   const handleToggleRoom = () => setToggleRoom(!toggleRoom)
-  const handleDeleteRoom = () => {
-    deleteRoom(roomNumber)
-    console.log(roomNumber)
-  }
+  const handleDeleteRoom = () => deleteRoom(roomNumber)
 
   return (
     <>
