@@ -36,7 +36,7 @@ const Room = () => {
           <GuestRoom key={room} />
         ))}
 
-        <div className="d-grid gap-2">
+        <div className="d-grid gap-2" style={{ marginBottom: 100 }}>
           <button
             className="btn btn-lg text-primary"
             style={{ background: '#F7FBFF', borderColor: '#BFDAF9' }}
@@ -46,7 +46,10 @@ const Room = () => {
           </button>
         </div>
 
-        <div className="d-grid gap-2 position-absolute bottom-0 w-100">
+        <div
+          className="d-grid gap-2 position-fixed bottom-0"
+          style={{ width: '92%', marginBottom: 10 }}
+        >
           <button className="btn btn-lg text-white bg-primary">
             <i className="bi bi-search text-white"></i> Search {roomCount} Room
             {roomCount > 1 && 's'} • {guestCount} guests
