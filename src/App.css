@@ -2,3 +2,8 @@ input:focus {
   outline: none !important;
   box-shadow: none !important;
 }
+input::placeholder {
+  color: #2a333d;
+  font-size: small;
+  font-weight: bolder;
+}
