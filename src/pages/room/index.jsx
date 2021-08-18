@@ -20,7 +20,7 @@ const Room = () => {
   return (
     <div>
       <div
-        className="border p-3 d-flex justify-content-center position-fixed top-0 w-100"
+        className="bg-white border p-3 d-flex justify-content-center position-fixed top-0 w-100"
         style={{ zIndex: 200 }}
       >
         <Link to="/">
