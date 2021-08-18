@@ -80,6 +80,7 @@ const Home = () => {
                 placeholder="2"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
+                style={{ borderLeft: 0 }}
               />
             </div>
           </div>
