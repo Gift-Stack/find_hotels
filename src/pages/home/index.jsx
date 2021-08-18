@@ -21,7 +21,7 @@ const Home = () => {
       <div>
         <img src={Logo} alt="Logo" />
       </div>
-      <h1 style={{ width: '65%', margin: '80px 0' }}>
+      <h1 style={{ width: '65%', margin: '90px 0 95px 0' }}>
         Find the perfect deal, always.
       </h1>
       <div className="card rounded py-3 px-2">
