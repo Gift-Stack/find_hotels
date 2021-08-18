@@ -21,7 +21,7 @@ const Room = () => {
     <div>
       <div
         className="border p-3 d-flex justify-content-center position-fixed top-0 w-100"
-        style={{ zIndex: 2 }}
+        style={{ zIndex: 200 }}
       >
         <Link to="/">
           <i className="bi bi-x-lg position-absolute start-0 mx-3 text-primary"></i>
@@ -30,7 +30,7 @@ const Room = () => {
       </div>
       <div
         className="position-relative"
-        style={{ margin: '90px 16px', minHeight: '85vh', zIndex: 1 }}
+        style={{ margin: '90px 16px 0 16px', minHeight: '85vh', zIndex: 1 }}
       >
         {rooms.map((room) => (
           <GuestRoom key={room} />
