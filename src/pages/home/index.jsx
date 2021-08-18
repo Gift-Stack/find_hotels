@@ -80,36 +80,11 @@ const Home = () => {
                 placeholder="2"
                 aria-label="Username"
                 aria-describedby="basic-addon1"
-                style={{ borderRight: 0, borderLeft: 0 }}
               />
             </div>
           </div>
         </div>
 
-        {/* <div class="input-group mb-3">
-          <span
-            class="input-group-text bg-white d-flex justify-content-center align-items-center"
-            id="basic-addon1"
-            style={{ borderRight: 0 }}
-          >
-            <img src={Location} alt="Location" />
-          </span>
-          <input
-            type="text"
-            class="form-control form-control-lg"
-            placeholder="Type city, place, or hotel name"
-            aria-label="Username"
-            aria-describedby="basic-addon1"
-            style={{ borderRight: 0, borderLeft: 0 }}
-          />
-          <span
-            class="input-group-text bg-white justify-content-center align-items-center"
-            id="basic-addon1"
-            style={{ borderLeft: 0 }}
-          >
-            <img src={Arrow} alt="Arrow" />
-          </span>
-        </div> */}
         <div className="d-grid gap-2">
           <button className="btn btn-lg text-white bg-primary">Search</button>
         </div>
