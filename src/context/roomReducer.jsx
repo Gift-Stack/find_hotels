@@ -10,7 +10,9 @@ export default (state, action) => {
         ...state,
         rooms: [
           ...state.rooms,
-          state.rooms.length === 0 ? 1 : state.rooms[state.rooms.length - 1] + 1
+          state.rooms.length === 0
+            ? 1
+            : state.rooms.length < 8 && state.rooms[state.rooms.length - 1] + 1
         ]
       }
     case DELETE_ROOM:

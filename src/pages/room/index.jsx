@@ -7,15 +7,20 @@ const Room = () => {
   const { rooms, addRoom, getRooms } = useContext(RoomContext)
   const [roomCount, setRoomCount] = useState(1)
   const [guestCount, setGuestCount] = useState(2)
+  const [isVerified, setIsVerified] = useState(false)
 
   useEffect(() => {
     getRooms()
     // eslint-disable-next-line
   }, [rooms])
 
+  const handleVerified = (data) => setIsVerified(data)
+
   const AddRoom = () => {
-    addRoom()
-    getRooms()
+    if (rooms.length < 8) {
+      addRoom()
+      getRooms()
+    }
   }
   return (
     <div>
@@ -33,7 +38,11 @@ const Room = () => {
         style={{ margin: '90px 16px 0 16px', minHeight: '85vh', zIndex: 1 }}
       >
         {rooms.map((room) => (
-          <GuestRoom key={room} roomNumber={room} />
+          <GuestRoom
+            key={room}
+            roomNumber={room}
+            handleVerified={handleVerified}
+          />
         ))}
 
         <div className="d-grid gap-2" style={{ marginBottom: 100 }}>
@@ -50,7 +59,11 @@ const Room = () => {
           className="d-grid gap-2 position-fixed bottom-0"
           style={{ width: '92%', marginBottom: 10 }}
         >
-          <button className="btn btn-lg text-white bg-primary">
+          <button
+            className={`btn btn-lg text-white bg-primary ${
+              !isVerified && 'disabled'
+            }`}
+          >
             <i className="bi bi-search text-white"></i> Search {roomCount} Room
             {roomCount > 1 && 's'} • {guestCount} guests
           </button>

@@ -1,19 +1,25 @@
-import { useState, useContext } from 'react'
+import { useState, useEffect, useContext } from 'react'
 import RoomContext from '../../../context/roomContext'
 
-const GuestRoom = ({ roomNumber }) => {
+const GuestRoom = ({ roomNumber, handleVerified }) => {
   const { deleteRoom } = useContext(RoomContext)
   const [childrenCounter, setChildrenCounter] = useState(0)
   const [adultCounter, setAdultCounter] = useState(2)
   const [toggleChildren, setToggleChildren] = useState(false)
   const [childrenCounterArr, setChildrenCounterArr] = useState([])
 
+  useEffect(() => {
+    if (childrenCounter + adultCounter <= 5) {
+      handleVerified(true)
+    }
+  })
+
   const handleIncrement = (toIncrement) => {
-    if (toIncrement === 'child') {
+    if (toIncrement === 'child' && childrenCounter < 3) {
       setChildrenCounter(childrenCounter + 1)
       setChildrenCounterArr([...childrenCounterArr, childrenCounter + 1])
     }
-    if (toIncrement === 'adult') {
+    if (toIncrement === 'adult' && adultCounter < 5) {
       setAdultCounter(adultCounter + 1)
     }
   }
